@@ -1,2 +1,33 @@
-.red {
-  color: blue; }
+body {
+  margin: 0;
+  padding: 0; }
+
+.search {
+  width: 900px; }
+
+.search_result {
+  margin-left: 60px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row; }
+
+.search_result_event-desc {
+  margin-left: 30px; }
+
+.search_result_event-img {
+  background-color: #d6d6d6;
+  border-radius: 5px;
+  height: 100%;
+  width: 336px; }
+
+.search_result_event-desc_info {
+  font-size: 20px; }
+
+.search_result_event-desc_info p {
+  color: #545454;
+  margin: 10px 0;
+  -webkit-font-smoothing: antialiased; }
+
+.search_result_event-desc_title {
+  color: #2b2b2b;
+  margin: 3px 0; }
