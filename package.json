@@ -7,15 +7,32 @@
     "author": "vadim <banzabit@gmail.com>",
     "license": "MIT",
     "devDependencies": {
-        "live-server": "^1.2.0"
+        "babel-core": "^6.24.1",
+        "babel-loader": "^7.1.2",
+        "babel-preset-env": "1.1.8",
+        "babel-preset-react": "6.23.0",
+        "babel-preset-stage-3": "6.22.0",
+        "html-webpack-plugin": "^3.2.0",
+        "live-server": "^1.2.0",
+        "webpack": "^4.26.0",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.10"
     },
     "scripts": {
         "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
         "server": "live-server src",
-        "start": "npm-run-all -p build-css server"
+        "start": "webpack-dev-server",
+        "build": "webpack"
     },
     "dependencies": {
         "node-sass-chokidar": "^1.3.4",
-        "npm-run-all": "^4.1.3"
+        "npm-run-all": "^4.1.3",
+        "prop-types": "^15.6.0",
+        "react": "15.4.2",
+        "react-dom": "15.4.2",
+        "style-loader": "^0.19.0",
+        "css-loader": "^0.28.7",
+        "postcss-loader": "^2.0.5",
+        "postcss-cssnext": "^3.0.2"
     }
 }
