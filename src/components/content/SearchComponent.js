@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 
 export default class SearchComponent extends Component {
+    static  propTypes = {
+        imageUrl: PropTypes.string.isRequired,
+        eventName: PropTypes.string.isRequired,
+        startEventDate: PropTypes.string.isRequired,
+        eventPlace: PropTypes.string.isRequired,
+        startEventPrice: PropTypes.string.isRequired,
+    }
     render() {
         let {
             imageUrl,
@@ -46,12 +53,4 @@ export default class SearchComponent extends Component {
             </div>
         );
     }
-}
-
-SearchComponent.propTypes = {
-    imageUrl: PropTypes.string.isRequired,
-    eventName: PropTypes.string.isRequired,
-    startEventDate: PropTypes.string.isRequired,
-    eventPlace: PropTypes.string.isRequired,
-    startEventPrice: PropTypes.string.isRequired,
 }
