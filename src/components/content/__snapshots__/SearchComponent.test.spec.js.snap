@@ -16,6 +16,7 @@ exports[`Search Component should render 1`] = `
         className="search-result__visual"
       >
         <img
+          data-spec="event_image"
           src="src/img/dj.jpg"
         />
       </div>

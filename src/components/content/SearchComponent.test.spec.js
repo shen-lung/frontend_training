@@ -41,4 +41,17 @@ describe('Search Component', () => {
 
         expect(component.find('[data-spec="start_event_price"]')).toHaveText('Starts at $67.50');
     });
+
+    it('should render event image', () => {
+        const component = mount(<SearchComponent {...baseProps} />);
+
+        expect(component.find('[data-spec="event_image"]').prop('src')).toEqual('src/img/dj.jpg');
+    });
+
+    it('should render sticker free', () => {
+        let props = {...baseProps, startEventPrice: 'Free'};
+        const component = mount(<SearchComponent {...props} />);
+
+        expect(component.find('[data-spec="free_sticker"]').exists()).toBe(true);
+    });
 });

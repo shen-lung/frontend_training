@@ -221,7 +221,7 @@
           "display": "0.00 USD"
         },
         "is_free": true,
-        "is_sold_out": true
+        "is_sold_out": false
       },
       "end_date": "2018-08-29",
       "tags": [{

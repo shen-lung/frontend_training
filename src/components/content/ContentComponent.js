@@ -2,32 +2,60 @@ import React, { Component } from 'react';
 
 import SearchComponent from './SearchComponent';
 
+import * as searchData from '../../data/searchData.json'
+
 export default class ContentComponent extends Component {
+    _getEventPlace(address, country) {
+        return `${address}, ${country}`;
+    }
+
+    _getStartEventPrice(ticketAvailability) {
+        if(!ticketAvailability.is_sold_out) {
+            if(!ticketAvailability.is_free) {
+                return ticketAvailability.minimum_ticket_price.display;
+            } else {
+                return 'Free';
+            }
+        }
+
+        return 'Sold out';
+    }
+
+    _getFilterSearchData() {
+        let data = [];
+        searchData.events.map((item) => {
+            data.push({
+                imageUrl: item.image.url,
+                eventName: item.name,
+                startEventDate: item.start_date,
+                eventPlace: this._getEventPlace(
+                    item.primary_venue_with_places.address.localized_address_display,
+                    item.primary_venue_with_places.address.country,
+                ),
+                startEventPrice: this._getStartEventPrice(item.ticket_availability)
+            });
+        });
+
+        return data;
+    }
+
     render() {
+        const searchData = this._getFilterSearchData();
+        console.log(searchData);
+        const data = searchData.map((item) => (
+            <SearchComponent
+                imageUrl={item.imageUrl}
+                eventName={item.eventName}
+                startEventDate={item.startEventDate}
+                eventPlace={item.eventPlace}
+                startEventPrice={item.startEventPrice}
+            />
+        ));
+
         return (
             <main>
                 <section className="search">
-                    <SearchComponent
-                        imageUrl={"src/img/dj.jpg"}
-                        eventName={"That Event DJ - Stylish DJs for Oakstop"}
-                        startEventDate={"Sat, Aug 11, 11:00am"}
-                        eventPlace={"Oakstop, Oakland, CA"}
-                        startEventPrice={"Starts at $67.50"}
-                    />
-                    <SearchComponent
-                        imageUrl={"src/img/trail_running.jpg"}
-                        eventName={"After the Pks 5K Road and 10K Trail Run"}
-                        startEventDate={"Sun, June 29, 08:00am"}
-                        eventPlace={"Van Buren, Hancock County, US"}
-                        startEventPrice={"$40.00"}
-                    />
-                    <SearchComponent
-                        imageUrl={"src/img/vino.jpg"}
-                        eventName={"Mendoza Wine Fair - Tercera Edición"}
-                        startEventDate={"Sat, Aug 18, 07:00pm"}
-                        eventPlace={"Mendoza, Mendoza, AR"}
-                        startEventPrice={"Free"}
-                    />
+                    {data}
                 </section>
             </main>
         );

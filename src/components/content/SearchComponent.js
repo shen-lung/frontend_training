@@ -19,19 +19,26 @@ export default class SearchComponent extends Component {
             startEventPrice
         } = this.props;
         let imageContent;
+        let price = 'Starts at ';
 
         if(!startEventPrice.includes('Free')) {
+            if(startEventPrice.includes('Sold out')) {
+                price = 'Sold out';
+            } else {
+                price = price + startEventPrice;
+            }
             imageContent = (
                 <div className="search-result__visual">
-                    <img src={imageUrl} />
+                    <img src={imageUrl} data-spec="event_image" />
                 </div>
             );
         } else {
+            price = 'Free';
             imageContent = (
                 <div className="search-result__visual">
                     <img src={imageUrl} />
                     <div className="search-result__visual__sticker">
-                        <p>Free</p>
+                        <p data-spec="free_sticker">Free</p>
                     </div>
                 </div>
             );
@@ -46,7 +53,7 @@ export default class SearchComponent extends Component {
                         <div className="search-result__event-desc__info">
                             <p data-spec="starts_event_date">{startEventDate}</p>
                             <p data-spec="event_place">{eventPlace}</p>
-                            <p data-spec="start_event_price">Starts at {startEventPrice}</p>
+                            <p data-spec="start_event_price">{price}</p>
                         </div>
                     </div>
                 </div>
