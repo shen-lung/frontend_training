@@ -31,7 +31,7 @@
         "server": "webpack-dev-server --config ./webpack.config.js",
         "start": "npm-run-all -p build-css server",
         "build": "webpack",
-        "test": "jest"
+        "test": "jest --config=./src/config/jest.config.js"
     },
     "dependencies": {
         "babel-plugin-transform-class-properties": "^6.24.1",
