@@ -42,11 +42,11 @@ export default class SearchComponent extends Component {
                 <div className="search-result">
                     {imageContent}
                     <div className="search-result__event-desc">
-                        <h2 className="search-result__event-desc__title">{eventName}</h2>
+                        <h2 className="search-result__event-desc__title" data-spec="event_name">{eventName}</h2>
                         <div className="search-result__event-desc__info">
-                            <p>{startEventDate}</p>
-                            <p>{eventPlace}</p>
-                            <p>Starts at {startEventPrice}</p>
+                            <p data-spec="starts_event_date">{startEventDate}</p>
+                            <p data-spec="event_place">{eventPlace}</p>
+                            <p data-spec="start_event_price">Starts at {startEventPrice}</p>
                         </div>
                     </div>
                 </div>

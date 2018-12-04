@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Component should render 1`] = `
+<SearchComponent
+  eventName="That Event DJ - Stylish DJs for Oakstop"
+  eventPlace="Oakstop, Oakland, CA"
+  imageUrl="src/img/dj.jpg"
+  startEventDate="Sat, Aug 11, 11:00am"
+  startEventPrice="$67.50"
+>
+  <div>
+    <div
+      className="search-result"
+    >
+      <div
+        className="search-result__visual"
+      >
+        <img
+          src="src/img/dj.jpg"
+        />
+      </div>
+      <div
+        className="search-result__event-desc"
+      >
+        <h2
+          className="search-result__event-desc__title"
+          data-spec="event_name"
+        >
+          That Event DJ - Stylish DJs for Oakstop
+        </h2>
+        <div
+          className="search-result__event-desc__info"
+        >
+          <p
+            data-spec="starts_event_date"
+          >
+            Sat, Aug 11, 11:00am
+          </p>
+          <p
+            data-spec="event_place"
+          >
+            Oakstop, Oakland, CA
+          </p>
+          <p
+            data-spec="start_event_price"
+          >
+            Starts at 
+            $67.50
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</SearchComponent>
+`;

@@ -2583,6 +2583,25 @@ escodegen@^1.9.1:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-eventbrite-legacy@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-eventbrite-legacy/-/eslint-config-eventbrite-legacy-3.0.0.tgz#45fe0fa8d201a6edbd6135429de47712c90a3470"
+  integrity sha1-Rf4PqNIBpu29YTVCneR3EskKNHA=
+
+eslint-config-eventbrite-react@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-eventbrite-react/-/eslint-config-eventbrite-react-5.0.0.tgz#3ff0329a6d8ab6fee8164504ad7f3262e007bf41"
+  integrity sha1-P/Aymm2Ktv7oFkUErX8yYuAHv0E=
+  dependencies:
+    eslint-config-eventbrite "^4.1.0"
+
+eslint-config-eventbrite@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-eventbrite/-/eslint-config-eventbrite-4.1.0.tgz#12e4f6c799208e0a23c0f49ee7d7d9ebb1f1f508"
+  integrity sha1-EuT2x5kgjgojwPSe59fZ67Hx9Qg=
+  dependencies:
+    eslint-config-eventbrite-legacy "^3.0.0"
+
 eslint-scope@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.0.tgz#50bf3071e9338bcdc43331794a0cb533f0136172"

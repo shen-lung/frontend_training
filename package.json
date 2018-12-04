@@ -24,7 +24,8 @@
         "react-addons-test-utils": "15.4",
         "webpack": "^4.26.0",
         "webpack-cli": "^3.1.2",
-        "webpack-dev-server": "^3.1.10"
+        "webpack-dev-server": "^3.1.10",
+        "eslint-config-eventbrite-react": "^5.0.0"
     },
     "scripts": {
         "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
