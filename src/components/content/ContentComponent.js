@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import SearchComponent from './SearchComponent';
 
-import * as searchData from '../../data/searchData.json'
-
 export default class ContentComponent extends Component {
+    static  propTypes = {
+        searchList: PropTypes.object.isRequired,
+    }
+
     _getEventPlace(address, country) {
         return `${address}, ${country}`;
     }
@@ -22,8 +25,9 @@ export default class ContentComponent extends Component {
     }
 
     _getFilterSearchData() {
+        let {searchList} = this.props;
         let data = [];
-        searchData.events.map((item) => {
+        searchList.events.map((item) => {
             data.push({
                 imageUrl: item.image.url,
                 eventName: item.name,

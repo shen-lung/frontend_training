@@ -9,7 +9,6 @@ import reducer from './reducers';
 
 import ConnectedContent from './containers/ConnectedContent';
 import ConnectedReactStepper from './containers/ConnectedReactStepper';
-import ReactSearchContent from './containers/ConnectedReactSearchContent';
 import ConnectedStepper from './containers/ConnectedStepper'
 
 import './App.css';
@@ -31,9 +30,10 @@ export default class App extends React.Component {
         return (
             <div>
                 <Provider store={this._store}>
-                    <ConnectedStepper />
+                    {/* <ConnectedStepper /> */}
+                    <ConnectedContent />
                 </Provider>
-                <ConnectedReactStepper />
+                {/* <ConnectedReactStepper /> */}
                 {/* <ReactSearchContent /> */}
             </div>
         );
