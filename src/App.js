@@ -9,23 +9,10 @@ import reducer from './reducers';
 
 import ConnectedContent from './containers/ConnectedContent';
 import ConnectedReactStepper from './containers/ConnectedReactStepper';
+import ReactSearchContent from './containers/ConnectedReactSearchContent';
 import ConnectedStepper from './containers/ConnectedStepper'
 
 import './App.css';
-
-// const todos = (state = [], {type, payload}) => {
-//     let nextState = state;
-
-//     if (type === 'ADD_TODO') {
-//         nextState = [...nextState, payload];
-//     }
-
-//     return nextState;
-// };
-
-// const myReducers = combineReducers({
-//     todos,
-// });
 
 export default class App extends React.Component {
     constructor(props) {
@@ -47,6 +34,7 @@ export default class App extends React.Component {
                     <ConnectedStepper />
                 </Provider>
                 <ConnectedReactStepper />
+                {/* <ReactSearchContent /> */}
             </div>
         );
     }
