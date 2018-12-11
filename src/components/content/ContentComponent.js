@@ -41,7 +41,6 @@ export default class ContentComponent extends Component {
 
     render() {
         const searchData = this._getFilterSearchData();
-        console.log(searchData);
         const data = searchData.map((item) => (
             <SearchComponent
                 imageUrl={item.imageUrl}

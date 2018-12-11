@@ -74,3 +74,43 @@ body
     color: $title-color;
     margin: 3px 0;
 }
+
+.calculate-content {
+    background-color: #e2e2e2;
+    height: 282px;
+    position: relative;
+}
+.calculate-content__button {
+    border-radius: 50%;
+    font-size: xx-large;
+    height: 54px;
+    outline: none;
+    width: 54px;
+}
+.calculate-content__result {
+    font-size: 70px;
+    position: absolute;
+    left: 48%;
+    margin: 61px 0;
+}
+.calculate-content__react {
+    position: absolute;
+    left: 47%;
+    margin: 20px 0;
+}
+.calculate-content__redux {
+    position: absolute;
+    left: 43%;
+    margin: 20px 0;
+}
+.button-content {
+    position: absolute;
+    left: 45%;
+    top: 55%;
+    display: flex;
+    width: 121px;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
