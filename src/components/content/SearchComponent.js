@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import MediaCardContent from 'eventbrite_design_system/mediaCardContent/MediaCardContent';
+
 
 export default class SearchComponent extends Component {
     static  propTypes = {
@@ -18,7 +20,7 @@ export default class SearchComponent extends Component {
             eventPlace,
             startEventPrice
         } = this.props;
-        let imageContent;
+        let imageContent = '';
         let price = 'Starts at ';
 
         if(!startEventPrice.includes('Free')) {
@@ -27,35 +29,32 @@ export default class SearchComponent extends Component {
             } else {
                 price = price + startEventPrice;
             }
-            imageContent = (
-                <div className="search-result__visual">
-                    <img src={imageUrl} data-spec="event_image" />
-                </div>
-            );
         } else {
             price = 'Free';
             imageContent = (
-                <div className="search-result__visual">
-                    <img src={imageUrl} />
-                    <div className="search-result__visual__sticker">
-                        <p data-spec="free_sticker">Free</p>
-                    </div>
-                </div>
+                <span className="eds-text-color--grey-700">{price}</span>
             );
         }
 
         return (
             <div>
-                <div className="search-result">
-                    {imageContent}
-                    <div className="search-result__event-desc">
-                        <h2 className="search-result__event-desc__title" data-spec="event_name">{eventName}</h2>
-                        <div className="search-result__event-desc__info">
-                            <p data-spec="starts_event_date">{startEventDate}</p>
-                            <p data-spec="event_place">{eventPlace}</p>
-                            <p data-spec="start_event_price">{price}</p>
-                        </div>
-                    </div>
+                <div className="search-result__width">
+                    <MediaCardContent
+                        style="standard"
+                        type="grid"
+                        imageStyle="fixed"
+                        containerSpacingClasses="eds-l-pad-all-1"
+                        title={eventName}
+                        flag={imageContent}
+                        subContentOne={startEventDate}
+                        subContentTwo={eventPlace}
+                        subContentThree={price}
+                        imageUrl={imageUrl}
+                        shouldShowIcons={true}
+                        primaryIconType="heart-chunky"
+                        primaryIconStyle="dark"
+                        primaryIconTitle="Save"
+                    />
                 </div>
             </div>
         );

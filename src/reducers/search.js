@@ -1,12 +1,23 @@
-import SELECT_ALL_EVENTS from '../actions/search';
+import {
+    SET_EVENT_DATA,
+    GET_ALL_EVENTS
+} from '../actions/search';
 
-import * as searchData from '../data/searchData.json';
+import searchData from '../data/searchData.json';
 
-const searchEvents = (state = searchData, {type}) => {
+const events = searchData.events;
+
+const searchEvents = (state = events, {type, payload}) => {
     let newState = state;
-    if(type === SELECT_ALL_EVENTS) {
-        newState = searchData;
+
+    if (type === SET_EVENT_DATA) {
+        newState = payload;
     }
+
+    if (type === GET_ALL_EVENTS) {
+        newState = events;
+    }
+
     return newState;
 };
 

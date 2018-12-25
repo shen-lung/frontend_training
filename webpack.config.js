@@ -1,6 +1,7 @@
 const path = require('path');
 
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -8,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    devtool: 'cheap-module-eval-source-map',
     module: {
         rules: [
             {
@@ -26,6 +28,10 @@ module.exports = {
         ],
     },
     plugins: [
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'development',
+            REACT_APP_TARGET: 'web',
+        }),
         new HtmlWebPackPlugin({
             template: './public/index.html',
             filename: './index.html',

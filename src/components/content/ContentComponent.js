@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import SearchComponent from './SearchComponent';
+import ConnectedSearchFrom from '../../containers/ConnectedSearchFrom';
 
 export default class ContentComponent extends Component {
     static  propTypes = {
@@ -25,9 +26,12 @@ export default class ContentComponent extends Component {
     }
 
     _getFilterSearchData() {
-        let {searchList} = this.props;
+        let {
+            searchList,
+        } = this.props;
         let data = [];
-        searchList.events.map((item) => {
+
+        searchList.map((item) => {
             data.push({
                 imageUrl: item.image.url,
                 eventName: item.name,
@@ -57,7 +61,8 @@ export default class ContentComponent extends Component {
 
         return (
             <main>
-                <section className="search">
+                <section className="search eds-l-mar-left-4">
+                    <ConnectedSearchFrom />
                     {data}
                 </section>
             </main>
