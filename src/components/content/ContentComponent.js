@@ -33,12 +33,12 @@ export default class ContentComponent extends Component {
 
         searchList.map((item) => {
             data.push({
-                imageUrl: item.image.url,
+                imageUrl: item.image ? item.image.original.url : '',
                 eventName: item.name,
                 startEventDate: item.start_date,
                 eventPlace: this._getEventPlace(
-                    item.primary_venue_with_places.address.localized_address_display,
-                    item.primary_venue_with_places.address.country,
+                    item.primary_venue.address.localized_address_display,
+                    item.primary_venue.address.country,
                 ),
                 startEventPrice: this._getStartEventPrice(item.ticket_availability)
             });

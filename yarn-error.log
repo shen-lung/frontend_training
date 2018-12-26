@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/vadim/.nvm/versions/node/v8.9.0/bin/node /Users/vadim/.nvm/versions/node/v8.9.0/bin/yarn add redux@3.5.2
+  /Users/vadim/.nvm/versions/node/v8.9.0/bin/node /Users/vadim/.nvm/versions/node/v8.9.0/bin/yarn add eventbrite
 
 PATH: 
   /Users/vadim/.nvm/versions/node/v8.9.0/bin:/Users/vadim/.evbdevtools/arcanist/bin:/Users/vadim/.evbdevtools/arcanist/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -36,7 +36,6 @@ npm manifest:
       "author": "vadim <banzabit@gmail.com>",
       "license": "MIT",
       "devDependencies": {
-          "eventbrite_design_system": "http://packages.evbops.com:8889/package/eventbrite_design_system/67.1.0",
           "babel-core": "^6.24.1",
           "babel-jest": "23.6",
           "babel-loader": "^7.1.2",
@@ -45,6 +44,8 @@ npm manifest:
           "babel-preset-stage-3": "6.22.0",
           "enzyme": "3.7",
           "enzyme-adapter-react-15.4": "^1.2.0",
+          "eslint-config-eventbrite-react": "^5.0.0",
+          "eventbrite_design_system": "http://packages.evbops.com:8889/package/eventbrite_design_system/67.1.0",
           "html-webpack-plugin": "^3.2.0",
           "identity-obj-proxy": "^3.0.0",
           "jest": "22.4",
@@ -52,10 +53,11 @@ npm manifest:
           "jest-junit": "3.6",
           "live-server": "^1.2.0",
           "react-addons-test-utils": "15.4",
+          "redux-devtools-extension": "^2.13.7",
+          "redux-logger": "^3.0.6",
           "webpack": "^4.26.0",
           "webpack-cli": "^3.1.2",
-          "webpack-dev-server": "^3.1.10",
-          "eslint-config-eventbrite-react": "^5.0.0"
+          "webpack-dev-server": "^3.1.10"
       },
       "scripts": {
           "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
@@ -74,6 +76,10 @@ npm manifest:
           "prop-types": "^15.6.2",
           "react": "15.4.2",
           "react-dom": "15.4.2",
+          "react-redux": "^4.4.5",
+          "redux": "^3.5.2",
+          "redux-form": "^6.2.0",
+          "redux-thunk": "^2.2.0",
           "style-loader": "^0.19.0"
       }
   }

@@ -4,7 +4,7 @@ import 'eventbrite_design_system/css/eds.css';
 
 import App from './App';
 
-import './redux-example';
+// import './redux-example';
 
 
 render(<App />, document.getElementById('root'));

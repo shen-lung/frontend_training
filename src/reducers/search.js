@@ -3,11 +3,7 @@ import {
     GET_ALL_EVENTS
 } from '../actions/search';
 
-import searchData from '../data/searchData.json';
-
-const events = searchData.events;
-
-const searchEvents = (state = events, {type, payload}) => {
+const searchEvents = (state = [], {type, payload}) => {
     let newState = state;
 
     if (type === SET_EVENT_DATA) {
@@ -15,7 +11,7 @@ const searchEvents = (state = events, {type, payload}) => {
     }
 
     if (type === GET_ALL_EVENTS) {
-        newState = events;
+        newState = payload;
     }
 
     return newState;

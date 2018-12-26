@@ -1,23 +1,22 @@
-import searchData from '../data/searchData.json';
-
-const events = searchData.events;
+import {
+    fetchEventSearch,
+    fetchAllEvents,
+} from '../api/base';
 
 export const SET_EVENT_DATA = 'SET_EVENT_DATA';
 export const GET_ALL_EVENTS = 'GET_ALL_EVENTS';
 
 export const setEventData = (data) => ({type: SET_EVENT_DATA, payload: data});
-export const setAllEvents = () => ({type: GET_ALL_EVENTS});
+export const setAllEvents = (data) => ({type: GET_ALL_EVENTS, payload: data});
 
 export const searchEvents = (data) => (dispatch) => {
-    let result = events.filter((event) => {
-        let lowerEventName = event.name.toLowerCase()
-
-        return lowerEventName.includes(data.searchText.toLowerCase())
+    fetchEventSearch(data.searchText).then((result) => {
+        dispatch(setEventData(result));
     });
-
-    dispatch(setEventData(result));
 };
 
 export const getAllEvents = () => (dispatch) => {
-    dispatch(setAllEvents());
+    fetchAllEvents().then((result) => {
+        dispatch(setAllEvents(result));
+    });
 };
