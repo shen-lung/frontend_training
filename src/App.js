@@ -19,7 +19,6 @@ export default class App extends React.Component {
 
         this._store = createStore(
             reducer,
-            {},
             composeWithDevTools(
                 applyMiddleware(...[thunk], createLogger({collapsed: true})),
             ),

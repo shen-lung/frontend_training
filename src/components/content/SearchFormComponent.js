@@ -14,6 +14,12 @@ export default class SearchFormComponent extends PureComponent {
         handleReset: PropTypes.func.isRequired,
     }
 
+    componentWillMount = () => {
+        let {handleReset} = this.props;
+
+        handleReset();
+    }
+
     render() {
         let {handleSubmit, handleReset} = this.props;
 
@@ -34,8 +40,12 @@ export default class SearchFormComponent extends PureComponent {
                             label="Filter by category"
                             values={[
                                 {
-                                    value: 'any_category',
-                                    display: 'Any category',
+                                    value: 'any_price',
+                                    display: 'Any price',
+                                },
+                                {
+                                    value: 'free_price',
+                                    display: 'Free only',
                                 },
                             ]}
                         />

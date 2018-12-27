@@ -6,7 +6,7 @@ import ConnectedSearchFrom from '../../containers/ConnectedSearchFrom';
 
 export default class ContentComponent extends Component {
     static  propTypes = {
-        searchList: PropTypes.object.isRequired,
+        searchList: PropTypes.array.isRequired,
     }
 
     _getEventPlace(address, country) {
@@ -40,7 +40,8 @@ export default class ContentComponent extends Component {
                     item.primary_venue.address.localized_address_display,
                     item.primary_venue.address.country,
                 ),
-                startEventPrice: this._getStartEventPrice(item.ticket_availability)
+                startEventPrice: this._getStartEventPrice(item.ticket_availability),
+                eventId: item.id
             });
         });
 
@@ -51,6 +52,7 @@ export default class ContentComponent extends Component {
         const searchData = this._getFilterSearchData();
         const data = searchData.map((item) => (
             <SearchComponent
+                key={item.eventId}
                 imageUrl={item.imageUrl}
                 eventName={item.eventName}
                 startEventDate={item.startEventDate}
