@@ -2,12 +2,14 @@ import {connect} from 'react-redux';
 
 import ContentComponent from '../components/content/ContentComponent';
 import {selectAllEvents} from '../actions/search';
+import {goToHome} from '../actions/indexScreenPage';
 
 const _mapStateToProps = (state) => ({
   searchList: state.searchEvents,
 });
 const _mapDispatchToProps = {
-  selectAllEvents
+  selectAllEvents,
+  goToHome
 };
 
 export default connect(

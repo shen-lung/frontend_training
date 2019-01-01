@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Button from 'eventbrite_design_system/button/Button';
 
 import SearchComponent from './SearchComponent';
 import ConnectedSearchFrom from '../../containers/ConnectedSearchFrom';
@@ -7,6 +8,7 @@ import ConnectedSearchFrom from '../../containers/ConnectedSearchFrom';
 export default class ContentComponent extends Component {
     static  propTypes = {
         searchList: PropTypes.array.isRequired,
+        goToHome: PropTypes.func.isRequired,
     }
 
     _getEventPlace(address, country) {
@@ -49,6 +51,7 @@ export default class ContentComponent extends Component {
     }
 
     render() {
+        let {goToHome} = this.props;
         const searchData = this._getFilterSearchData();
         const data = searchData.map((item) => (
             <SearchComponent
@@ -65,6 +68,7 @@ export default class ContentComponent extends Component {
             <main>
                 <section className="search eds-l-mar-left-4">
                     <ConnectedSearchFrom />
+                    <Button onClick={goToHome}>GO HOME</Button>
                     {data}
                 </section>
             </main>

@@ -4,12 +4,12 @@ import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {createLogger} from 'redux-logger';
 import thunk from 'redux-thunk';
+import {routerMiddleware, syncHistoryWithStore} from 'react-router-redux';
+import {browserHistory, Router} from 'react-router';
+
 
 import reducer from './reducers';
-
-import ConnectedContent from './containers/ConnectedContent';
-import ConnectedReactStepper from './containers/ConnectedReactStepper';
-import ConnectedStepper from './containers/ConnectedStepper'
+import getRoutes from './routes';
 
 import './App.css';
 
@@ -20,20 +20,21 @@ export default class App extends React.Component {
         this._store = createStore(
             reducer,
             composeWithDevTools(
-                applyMiddleware(...[thunk], createLogger({collapsed: true})),
+                applyMiddleware(...[thunk, routerMiddleware(browserHistory)],  createLogger({collapsed: true})),
             ),
         );
+
+        this._history = syncHistoryWithStore(browserHistory, this._store);
     }
 
     render() {
+        let routes = getRoutes();
+
         return (
             <div>
                 <Provider store={this._store}>
-                    {/* <ConnectedStepper /> */}
-                    <ConnectedContent />
+                    <Router history={this._history} routes={routes} />
                 </Provider>
-                {/* <ConnectedReactStepper /> */}
-                {/* <ReactSearchContent /> */}
             </div>
         );
     }

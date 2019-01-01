@@ -6,7 +6,6 @@ import InputField from 'eventbrite_design_system/inputField/InputField';
 import ValidationFormField from 'eventbrite_design_system/validationFormField/ValidationFormField';
 import SelectField from 'eventbrite_design_system/inputField/SelectField';
 import Button from 'eventbrite_design_system/button/Button';
-import Icon from 'eventbrite_design_system/icon/Icon';
 
 export default class SearchFormComponent extends PureComponent {
     static  propTypes = {
@@ -50,13 +49,8 @@ export default class SearchFormComponent extends PureComponent {
                             ]}
                         />
                     </ValidationFormField>
-                    <Button style="fill" type="submit">
-                        <Icon type="magnifying-glass-chunky" />
-                        GO
-                    </Button>
-                    <Button onClick={handleReset}>
-                        RESET
-                    </Button>
+                    <Button style="fill" type="submit">SEARCH</Button>
+                    <Button onClick={handleReset}>RESET</Button>
                 </div>
             </form>
         );
